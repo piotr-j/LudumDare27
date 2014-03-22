@@ -1,0 +1,137 @@
+{
+"bones": [
+	{ "name": "root" },
+	{ "name": "main", "parent": "root", "x": 47.64, "y": 74.2 },
+	{ "name": "door_left", "parent": "main", "x": -25 },
+	{ "name": "door_right", "parent": "main", "x": 25 },
+	{ "name": "dude", "parent": "main", "y": 55 },
+	{ "name": "laser", "parent": "main", "x": -27.69, "y": 29.77 }
+],
+"slots": [
+	{ "name": "background", "bone": "main", "attachment": "5_background" },
+	{ "name": "dude", "bone": "dude" },
+	{ "name": "4_laser", "bone": "laser", "attachment": "4_laser" },
+	{ "name": "main", "bone": "main", "attachment": "1_chamber" },
+	{ "name": "2_door_right", "bone": "door_right", "attachment": "2_door_right" },
+	{ "name": "3_door_left", "bone": "door_left", "attachment": "3_door_left" }
+],
+"skins": {
+	"default": {
+		"2_door_right": {
+			"2_door_right": { "x": -12, "y": -7, "width": 25, "height": 117 }
+		},
+		"3_door_left": {
+			"3_door_left": { "x": 13, "y": -7, "width": 25, "height": 117 }
+		},
+		"4_laser": {
+			"4_laser": { "y": -35.68, "width": 9, "height": 120 }
+		},
+		"background": {
+			"5_background": { "y": -6, "width": 57, "height": 122 }
+		},
+		"dude": {
+			"1_pose": { "x": 2, "y": -64, "width": 29, "height": 107 }
+		},
+		"main": {
+			"1_chamber": { "width": 84, "height": 148 }
+		}
+	}
+},
+"events": {
+	"laser": {},
+	"scan_end": {},
+	"scan_start": {}
+},
+"animations": {
+	"open": {
+		"bones": {
+			"laser": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 }
+				]
+			},
+			"door_left": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{
+						"time": 0.1,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6, "x": -24.35, "y": 3.36 }
+				]
+			},
+			"door_right": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.5, "x": 24.35, "y": 3.16, "curve": "stepped" },
+					{ "time": 0.6, "x": 24.35, "y": 3.16 }
+				]
+			}
+		}
+	},
+	"scan": {
+		"bones": {
+			"laser": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.6666, "x": 0, "y": 0 },
+					{ "time": 1, "x": 54.25, "y": 0, "curve": "stepped" },
+					{ "time": 1.1666, "x": 54.25, "y": 0 },
+					{ "time": 1.5, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 2.1666, "x": 0, "y": 0 }
+				]
+			},
+			"door_left": {
+				"translate": [
+					{ "time": 0, "x": -24.35, "y": 3.36 },
+					{ "time": 0.5666, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.6666, "x": 0, "y": 0, "curve": "stepped" },
+					{
+						"time": 1.5,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 2.0666, "x": -24.35, "y": 3.36, "curve": "stepped" },
+					{ "time": 2.1666, "x": -24.35, "y": 3.36 }
+				]
+			},
+			"door_right": {
+				"translate": [
+					{ "time": 0, "x": 24.35, "y": 3.16, "curve": "stepped" },
+					{ "time": 0.1, "x": 24.35, "y": 3.16 },
+					{ "time": 0.6666, "x": 0, "y": 0, "curve": "stepped" },
+					{
+						"time": 1.6,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 2.1666, "x": 24.35, "y": 3.16 }
+				]
+			}
+		},
+		"slots": {
+			"dude": {
+				"attachment": [
+					{ "time": 0, "name": "1_pose" },
+					{ "time": 2.1666, "name": null }
+				]
+			}
+		},
+		"events": [
+			{ "time": 0, "name": "scan_start" },
+			{ "time": 0.6666, "name": "laser" },
+			{ "time": 1.1666, "name": "laser" },
+			{ "time": 2.1666, "name": "scan_end" }
+		]
+	}
+}
+}

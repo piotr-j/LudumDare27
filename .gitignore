@@ -1,0 +1,21 @@
+# ignore compiled stuff
+*/bin/
+ProjectRogue-android/gen/
+# ignore non code assets
+raw_assets/
+# ignore links
+*.lnk
+# ignore mac crap
+*.DS_Store
+# ignore various config things
+.dropbox
+desktop.ini
+.metadata/
+# ignore idea things
+out/
+.idea/
+.metadata/
+*.iml
+project.properties
+spine-libgdx
+texturepacker
